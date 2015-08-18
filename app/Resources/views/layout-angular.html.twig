@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     {% block stylesheets %}
-        {% stylesheets 'css/*' filter='cssrewrite' %}
-        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% stylesheets 'css/style.scss' filter='cssrewrite' output='css/compiled/app.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
     {% endblock %}
 

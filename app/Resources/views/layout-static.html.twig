@@ -7,7 +7,8 @@
 
 
     {% block stylesheets %}
-        {% stylesheets 'css/*' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" />
+        {% stylesheets 'css/style.scss' filter='cssrewrite' output='css/compiled/app.css' %}
             <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
     {% endblock %}

@@ -10,6 +10,6 @@
 /vendor/
 /web/bundles/
 /.idea/
-/web/css/
-/web/js/
-/web/fonts/
+/web/css/compiled/
+/web/js/compiled/
+/web/bootstrap/
