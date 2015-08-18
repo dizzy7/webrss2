@@ -2,16 +2,17 @@
 
 namespace AppBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/", name="app_index")
+     * @Security("has_role('ROLE_USER')")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         return $this->render('default/index.html.twig', []);
     }
