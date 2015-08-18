@@ -1,10 +1,17 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
-#    parameter_name: value
+    rss_fetcher: app.service.simple_pie_fetcher
 
 services:
-    rss.angular_post_listener:
+    app.listener.angular_post:
         class: AppBundle\Listener\AngularPostListener
         tags:
           - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+
+    app.service.simple_pie:
+        class: AppBundle\Service\SimplePie
+
+    app.service.simple_pie_fetcher:
+        class: AppBundle\Service\SimplePieFetcher
+        arguments: [@doctrine.odm.mongodb.document_manager, @app.service.simple_pie, @logger]
