@@ -34,7 +34,7 @@
                 <a class="navbar-brand" href="{{ path('app_index') }}">RSS Reader</a>
             </div>
             <div class="navbar-collapse collapse">
-                {#TODO Меню#}
+                {{ knp_menu_render('AppBundle:Builder:mainMenu', {'style':'navbar'} ) }}
                 <ul class="nav navbar-nav navbar-right">
                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                         <li class="dropdown">
